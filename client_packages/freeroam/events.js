@@ -1,16 +1,4 @@
 (function() {
-    // Show vehicle buttons, when player enters vehicle (triggered from server, will be fixed on the client-side).
-    mp.events.add('playerEnteredVehicle', (player, vehicle, seat) => {
-	    menu.execute('$("#vehicle_buttons").fadeIn(250);');
-    });
-
-    // Hide vehicle buttons, when player exits vehicle (triggered from server, will be fixed on the client-side).
-    function hideVehicleButtons(player, vehicle, seat) {
-        menu.execute('$("#vehicle_buttons").fadeOut(250);');
-    }
-    mp.events.add('playerExitVehicle', hideVehicleButtons);
-    mp.events.add('hideVehicleButtons', hideVehicleButtons);
-
     // Getting data from CEF.
     mp.events.add('cefData', function() {
         // CEF data.

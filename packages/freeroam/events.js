@@ -86,7 +86,7 @@ module.exports = function() {
 				    player.customData.vehicle = mp.vehicles.new(mp.joaat(args[1]), pos);
 			    }
 			    // Hide vehicle buttons (bugfix).
-				player.call('hideVehicleButtons');
+			    player.call('hideVehicleButtons');
 
 			    break;
 			// Weapon.

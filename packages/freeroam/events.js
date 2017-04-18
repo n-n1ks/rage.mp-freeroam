@@ -118,10 +118,10 @@ module.exports = function() {
 					    player.vehicle.setColourRGB(colorPrimary.r, colorPrimary.g, colorPrimary.b, colorSecondary.r, colorSecondary.g, colorSecondary.b);
 				    }
 				    
-                    if (args[1] == 'neon') {
+                    			if (args[1] == 'neon') {
 					    let color = JSON.parse(args[2]);
 					    player.vehicle.setNeonColour(color.r, color.g, color.b);
-				    }
+				    	}
 			    }
 
 			    break;

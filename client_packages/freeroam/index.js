@@ -38,5 +38,5 @@ mp.events.add('playerJoinedServer', (id, name) => {
 // Remove player from the table.
 mp.events.add('playerLeavedServer', (id, name) => {
     if (menu)
-        menu.execute(`removePlayerInTheTable('${id}', '${name}');`);
+        menu.execute(`removePlayerInTheTable('${id}');`);
 });

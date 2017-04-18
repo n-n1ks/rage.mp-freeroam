@@ -1,24 +1,24 @@
 mp.events.addCommand('veh', (player, _, vehName) => {
     if (vehName && vehName.trim().length > 0) {
         // If player has vehicle - change model.
-		if (player.customData.vehicle) {
+        if (player.customData.vehicle) {
             if (player.customData.vehicle.model != mp.joaat(vehName))
-		        player.customData.vehicle.model = mp.joaat(vehName);
+                player.customData.vehicle.model = mp.joaat(vehName);
 		// Else - create new vehicle.
-		} else {
-			let pos = player.position;
-			pos.x += 2;
-			player.customData.vehicle = mp.vehicles.new(mp.joaat(vehName), pos);
+        } else {
+            let pos = player.position;
+            pos.x += 2;
+            player.customData.vehicle = mp.vehicles.new(mp.joaat(vehName), pos);
 		}
     } else
-        player.outputChatBox(`<b>Command syntax:</b> /veh [vehicle_name]`);
+    player.outputChatBox(`<b>Command syntax:</b> /veh [vehicle_name]`);
 });
 
 mp.events.addCommand('skin', (player, _, skinName) => {
     if (skinName && skinName.trim().length > 0)
         player.model = mp.joaat(skinName);
     else
-        player.outputChatBox(`<b>Command syntax:</b> /skin [skin_name]`);
+    player.outputChatBox(`<b>Command syntax:</b> /skin [skin_name]`);
 });
 
 mp.events.addCommand('fix', (player) => {
@@ -31,8 +31,8 @@ mp.events.addCommand('fix', (player) => {
 mp.events.addCommand('flip', (player) => {
     if (player.vehicle) {
         let rotation = player.vehicle.rotation;
-			rotation.y = 0;
-			player.vehicle.rotation = rotation;
+        rotation.y = 0;
+        player.vehicle.rotation = rotation;
     } else
         player.outputChatBox(`<b>Error:</b> you are not in the vehicle!`);
 });
@@ -67,7 +67,7 @@ mp.events.addCommand('warp', (player, _, playerID) => {
                 warped = true;
             }
         });
-
+        
         if (!warped)
             player.outputChatBox(`<b>Error:</b> player with such id not found!`);     
     } else

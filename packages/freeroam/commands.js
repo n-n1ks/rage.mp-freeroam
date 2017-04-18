@@ -11,14 +11,14 @@ mp.events.addCommand('veh', (player, _, vehName) => {
             player.customData.vehicle = mp.vehicles.new(mp.joaat(vehName), pos);
 		}
     } else
-    player.outputChatBox(`<b>Command syntax:</b> /veh [vehicle_name]`);
+        player.outputChatBox(`<b>Command syntax:</b> /veh [vehicle_name]`);
 });
 
 mp.events.addCommand('skin', (player, _, skinName) => {
     if (skinName && skinName.trim().length > 0)
         player.model = mp.joaat(skinName);
     else
-    player.outputChatBox(`<b>Command syntax:</b> /skin [skin_name]`);
+        player.outputChatBox(`<b>Command syntax:</b> /skin [skin_name]`);
 });
 
 mp.events.addCommand('fix', (player) => {

@@ -15,50 +15,49 @@ mp.events.add('playerExitVehicle', (player, vehicle, seat) => {
 mp.events.add('playerJoin', (player) => {
 	player.customData = {};
 
-		mp.players.forEach(_player => {
-			if (_player != player)
-				_player.call('playerJoinedServer', player.id, player.name);
-		});
+	mp.players.forEach(_player => {
+		if (_player != player)
+			_player.call('playerJoinedServer', player.id, player.name);
+	});
 	
-player.spawn(spawnPoints[Math.floor(Math.random() * spawnPoints.length)]);
+	player.spawn(spawnPoints[Math.floor(Math.random() * spawnPoints.length)]);
 	
-player.model = skins[Math.floor(Math.random() * skins.length)];
-player.health = 100;
-player.armour = 100;
+	player.model = skins[Math.floor(Math.random() * skins.length)];
+	player.health = 100;
+	player.armour = 100;
 });
 
 mp.events.add('playerQuit', (player) => {
 	if (player.customData.vehicle)
 		player.customData.vehicle.destroy();
 
-		mp.players.forEach(_player => {
-			if (_player != player)
-				_player.call('playerLeavedServer', player.id, player.name);
-		});
+	mp.players.forEach(_player => {
+		if (_player != player)
+			_player.call('playerLeavedServer', player.id, player.name);
+	});
 });
 
 mp.events.add('playerDeath', (player) => {
 	player.spawn(spawnPoints[Math.floor(Math.random() * spawnPoints.length)]);
 	
-player.model = skins[Math.floor(Math.random() * skins.length)];
-player.health = 100;
-player.armour = 100;
+	player.model = skins[Math.floor(Math.random() * skins.length)];
+	player.health = 100;
+	player.armour = 100;
 });
 
 mp.events.add('playerChat', (player, message) => {
-mp.players.broadcast(`<b>${player.name}[${player.id}]:</b> ${message}`);
+	mp.players.broadcast(`<b>${player.name}[${player.id}]:</b> ${message}`);
 });
 
 // Getting data from client.
 mp.events.add('clientData', function() {
 	let player = arguments[0];
-		console.log(player);
 	/*
 		@@ args[0] - data name.	
 		@@ args[n] - data value (if it is needed).
 	*/
 	let args = JSON.parse(arguments[1]);
-	console.log(args);
+	
 	switch (args[0]) {
 		// Suicide.
 		case 'kill':

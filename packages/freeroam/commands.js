@@ -58,12 +58,13 @@ mp.events.addCommand('armour', (player) => {
 
 mp.events.addCommand('warp', (player, _, playerID) => {
     if (playerID && playerID.trim().length > 0) {
-        let playerPos = mp.players.at(parseInt(playerID)).position;
-        if (playerPos) {
+        let sourcePlayer = mp.players.at(parseInt(playerID));
+        if (sourcePlayer) {
+            let playerPos = sourcePlayer.position;
             playerPos.x += 1;
             player.position = playerPos;
         } else
-            player.outputChatBox(`<b>Error:</b> player with such id not found!`);
+            player.outputChatBox(`<b>Warp:</b> player with such id not found!`);
                  
     } else
         player.outputChatBox(`<b>Command syntax:</b> /warp [player_id]`);

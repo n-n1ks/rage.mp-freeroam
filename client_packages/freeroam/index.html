@@ -122,6 +122,8 @@
 
 	<!-- Magic happens here -->
 	<script type="text/javascript">
+		// Chat active.
+		let chatActive = false;
 		// Vehicle color.
 		let colorType    = "primary";
 
@@ -201,7 +203,7 @@
 
 		// Show players online.
 		document.addEventListener('keydown', function(e) {
-			if (e.key === 'z' || e.keyCode === 90) {
+			if ((e.key === 'z' || e.keyCode === 90) && !chatActive) {
 				if (!centered) {
 					$('#online_players').css("top", Math.max(0, (($(window).height() - $('#online_players').outerHeight()) / 2) + $(window).scrollTop()) + "px");
 					$('#online_players').css("left", Math.max(0, (($(window).width() - $('#online_players').outerWidth()) / 2) + $(window).scrollLeft()) + "px");
@@ -213,7 +215,7 @@
 
 		// Hide players online.
 		document.addEventListener('keyup', function(e) {
-			if (e.key === 'z' || e.keyCode === 90) {
+			if ((e.key === 'z' || e.keyCode === 90) && !chatActive) {
 				$('#online_players').css('display', 'none');
 				centered = false;
 			}
@@ -247,8 +249,14 @@
 			$('#online_players #online_players_table tbody').append(text);
 		}
 
+		// Remove player from table.
 		function removePlayerInTheTable(id) {
 			$('#player-'+id).remove();
+		}
+
+		// Set chat activity.
+		function setChatActive(state) {
+			chatActive = state;
 		}
 	</script>
 </body>

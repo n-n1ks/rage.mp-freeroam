@@ -23,6 +23,15 @@
         menu.execute('$("#vehicle_buttons").fadeIn(250);');
     });
     
+    // Change chat activity.
+    mp.events.add('chatInputActive', () => {
+        menu.execute(`setChatActive(true);`);
+    });
+
+    mp.events.add('chatInputInactive', () => {
+        menu.execute(`setChatActive(false);`);
+    });
+
     // Getting data from CEF.
     mp.events.add('cefData', function() {
         // CEF data.

@@ -1,13 +1,13 @@
 mp.events.addCommand('veh', (player, _, vehName) => {
     if (vehName && vehName.trim().length > 0) {
+        let pos = player.position;
+        pos.x += 2;
         // If player has vehicle - change model.
         if (player.customData.vehicle) {
-            if (player.customData.vehicle.model != mp.joaat(vehName))
+                player.customData.vehicle.position = pos;
                 player.customData.vehicle.model = mp.joaat(vehName);
 		// Else - create new vehicle.
         } else {
-            let pos = player.position;
-            pos.x += 2;
             player.customData.vehicle = mp.vehicles.new(mp.joaat(vehName), pos);
 		}
     } else
@@ -58,18 +58,13 @@ mp.events.addCommand('armour', (player) => {
 
 mp.events.addCommand('warp', (player, _, playerID) => {
     if (playerID && playerID.trim().length > 0) {
-        let warped = false;
-        mp.players.forEach(_player => {
-            if (_player.id === parseInt(playerID)) {
-                let playerPos = _player.position;
-                playerPos.x += 1;
-                player.position = playerPos;
-                warped = true;
-            }
-        });
-        
-        if (!warped)
-            player.outputChatBox(`<b>Error:</b> player with such id not found!`);     
+        let playerPos = mp.players.at(parseInt(playerID));
+        if (playerPos) {
+            playerPos.x += 1;
+            player.position = playerPos;
+        } else
+            player.outputChatBox(`<b>Error:</b> player with such id not found!`);
+                 
     } else
         player.outputChatBox(`<b>Command syntax:</b> /warp [player_id]`);
 });

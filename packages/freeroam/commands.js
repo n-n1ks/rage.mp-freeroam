@@ -58,7 +58,7 @@ mp.events.addCommand('armour', (player) => {
 
 mp.events.addCommand('warp', (player, _, playerID) => {
     if (playerID && playerID.trim().length > 0) {
-        let playerPos = mp.players.at(parseInt(playerID));
+        let playerPos = mp.players.at(parseInt(playerID)).position;
         if (playerPos) {
             playerPos.x += 1;
             player.position = playerPos;

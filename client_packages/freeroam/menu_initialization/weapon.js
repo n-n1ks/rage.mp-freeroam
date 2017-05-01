@@ -1,5 +1,5 @@
 // Adding weapon in the weapon window.
-(function(browser, weapon) {
+exports = function(browser, weapon) {
     Object.keys(weapon).forEach(key => {
         let weapons = '';
         let keyFormated = key.toLowerCase().replace(/\s/g, '_');
@@ -19,4 +19,4 @@
 		
 		browser.execute(`$('#weapon_window .window_body').append('${queryFormated}')`);
     });
-})
+}

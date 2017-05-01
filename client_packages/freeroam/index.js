@@ -1,9 +1,9 @@
 // CEF browser.
 let menu;
 // Configs.
-let vehicles     = JSON.parse(require('freeroam/configs/vehicles.json'));
-let skins        = JSON.parse(require('freeroam/configs/skins.json')).Skins;
-let weapon       = JSON.parse(require('freeroam/configs/weapon.json'));
+let vehicles     = JSON.parse(require('freeroam/configs/vehicles.js'));
+let skins        = JSON.parse(require('freeroam/configs/skins.js')).Skins;
+let weapon       = JSON.parse(require('freeroam/configs/weapon.js'));
 // Initialization functions.
 let vehiclesInit = require('freeroam/menu_initialization/vehicles.js');
 let skinsinit    = require('freeroam/menu_initialization/skins.js');

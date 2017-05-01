@@ -1,5 +1,5 @@
 // Adding vehicles in the vehicles window.
-(function(browser, vehicles) {
+exports = function(browser, vehicles) {
 	Object.keys(vehicles).forEach((key, index) => {
 		// Adding all cars.
 		let cars = '';
@@ -18,4 +18,4 @@
 		
 		browser.execute(`$('#vehicles_window .window_body').append('${queryFormated}')`);
 	});
-});
+};

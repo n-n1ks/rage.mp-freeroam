@@ -1,4 +1,4 @@
-exports = function() {
+exports = function(menu) {
     // Add player in the table.
     mp.events.add('playerJoinedServer', (id, name) => {
         if (menu)

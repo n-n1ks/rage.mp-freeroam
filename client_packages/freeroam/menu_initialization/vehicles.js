@@ -1,6 +1,6 @@
 // Adding vehicles in the vehicles window.
 exports = function(browser, vehicles) {
-    Object.keys(vehicles).forEach((key, index) => {
+    Object.keys(vehicles).forEach((key) => {
         // Adding all cars.
         let cars = '';
         let keyFormated = key.toLowerCase().replace(/\s/g, '_');
@@ -15,9 +15,9 @@ exports = function(browser, vehicles) {
         </div>
         <div class="collapse_child" id="${keyFormated}_list" style="display: none;">
             ${cars}
-        </div>`
+        </div>`;
 
-        let queryFormated = query.replace(/\n/g, '').replace(/"/g, '\"');
+        let queryFormated = query.replace(/\n/g, '').replace(/"/g, '"');
 
         browser.execute(`$('#vehicles_window .window_body').append('${queryFormated}')`);
     });

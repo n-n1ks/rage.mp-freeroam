@@ -4,12 +4,13 @@ mp.events.addCommand('veh', (player, _, vehName) => {
         pos.x += 2;
         // If player has vehicle - change model.
         if (player.customData.vehicle) {
+            player.customData.vehicle.repair();
             player.customData.vehicle.position = pos;
             player.customData.vehicle.model = mp.joaat(vehName);
-		// Else - create new vehicle.
+        // Else - create new vehicle.
         } else {
             player.customData.vehicle = mp.vehicles.new(mp.joaat(vehName), pos);
-		}
+        }
     } else {
         player.outputChatBox(`<b>Command syntax:</b> /veh [vehicle_name]`);
     }
@@ -66,14 +67,14 @@ mp.events.addCommand('warp', (player, _, playerID) => {
             playerPos.x += 1;
             player.position = playerPos;
         } else {
-            player.outputChatBox(`<b>Warp:</b> player with such id not found!`);
+            player.outputChatBox(`<b>Warp:</b> player with such ID not found!`);
         }
     } else
         player.outputChatBox(`<b>Command syntax:</b> /warp [player_id]`);
 });
 
 mp.events.addCommand('tp', (player, _, x, y ,z) => {
-    if (parseFloat(x) && parseFloat(y) && parseFloat(z))
+    if (!isNaN(parseFloat(x)) && !isNaN(parseFloat(y)) && !isNaN(parseFloat(z)))
         player.position = new mp.Vector3(parseFloat(x),parseFloat(y),parseFloat(z));
     else
         player.outputChatBox(`<b>Command syntax:</b> /tp [x] [y] [z]`);

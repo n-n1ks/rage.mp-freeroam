@@ -8,7 +8,7 @@ let weapon       = JSON.parse(require('./freeroam/configs/weapon.js'));
 let vehiclesInit = require('./freeroam/menu_initialization/vehicles.js');
 let skinsinit    = require('./freeroam/menu_initialization/skins.js');
 let weaponInit   = require('./freeroam/menu_initialization/weapon.js');
-let playersInit  = require('./freeroam/menu_initialization/players.js')
+let playersInit  = require('./freeroam/menu_initialization/players.js');
 
 // Creating browser.
 mp.events.add('guiReady', () => {

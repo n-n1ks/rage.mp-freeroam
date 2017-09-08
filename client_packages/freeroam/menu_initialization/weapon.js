@@ -14,10 +14,10 @@ exports = function(browser, weapon) {
         </div>
         <div class="collapse_child" id="${keyFormated}_list" style="display: none;">
             ${weapons}
-        </div>`
+        </div>`;
 
-        let queryFormated = query.replace(/\n/g, '').replace(/"/g, '\"');
+        let queryFormated = query.replace(/\n/g, '').replace(/"/g, '"');
 
         browser.execute(`$('#weapon_window .window_body').append('${queryFormated}')`);
     });
-}
+};

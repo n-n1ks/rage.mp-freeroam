@@ -1,3 +1,5 @@
+/* eslint no-useless-escape: 0 */
+
 // Adding vehicles in the vehicles window.
 exports = function(browser, vehicles) {
     Object.keys(vehicles).forEach((key) => {
@@ -17,7 +19,7 @@ exports = function(browser, vehicles) {
             ${cars}
         </div>`;
 
-        let queryFormated = query.replace(/\n/g, '').replace(/"/g, '"');
+        let queryFormated = query.replace(/\n/g, '').replace(/"/g, '\"');
 
         browser.execute(`$('#vehicles_window .window_body').append('${queryFormated}')`);
     });

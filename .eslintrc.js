@@ -6,7 +6,7 @@ module.exports = {
     'extends': 'eslint:recommended',
     'rules': {
         'indent': [2, 4],
-        'quotes': [2, 'single', { 'allowTemplateLiterals': true } ],
+        'quotes': [2, 'single', { 'allowTemplateLiterals': true, 'avoidEscape': true } ],
         'semi': [2, 'always'],
         'brace-style': [2, '1tbs'],
         'array-bracket-spacing': [2, 'never'],

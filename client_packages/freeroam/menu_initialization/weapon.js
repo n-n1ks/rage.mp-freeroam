@@ -1,3 +1,5 @@
+/* eslint no-useless-escape: 0 */
+
 // Adding weapon in the weapon window.
 exports = function(browser, weapon) {
     Object.keys(weapon).forEach(key => {
@@ -16,7 +18,7 @@ exports = function(browser, weapon) {
             ${weapons}
         </div>`;
 
-        let queryFormated = query.replace(/\n/g, '').replace(/"/g, '"');
+        let queryFormated = query.replace(/\n/g, '').replace(/"/g, '\"');
 
         browser.execute(`$('#weapon_window .window_body').append('${queryFormated}')`);
     });

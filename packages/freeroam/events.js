@@ -40,7 +40,7 @@ mp.events.add('playerQuit', (player) => {
 mp.events.add('playerDeath', (player) => {
     player.spawn(spawnPoints[Math.floor(Math.random() * spawnPoints.length)]);
 
-    player.model = skins[Math.floor(Math.random() * skins.length)];
+    // player.model = skins[Math.floor(Math.random() * skins.length)];
     player.health = 100;
     player.armour = 100;
 });

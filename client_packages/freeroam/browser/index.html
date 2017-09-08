@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/drag.js"></script>
+    <script src="assets/js/collapse.js"></script>
+    <script src="assets/js/colorpicker.min.js"></script>
+</head>
+<body>
+    <div id="wrapper" style="display: none;">
+        <div class="left_menu">
+            <h1>GENERAL</h1>
+            <div class="btn" id="help" data-child="#help_window">HELP</div>
+            <div class="btn" onclick="mp.trigger('cefData', 'kill');">SUICIDE</div>
+            <div class="btn" id="skins" data-child="#skins_window">SKINS</div>
+            <div class="btn" id="vehicles" data-child="#vehicles_window">VEHICLES</div>
+            <div class="btn" id="weapon" data-child="#weapon_window">WEAPON</div>
+
+            <div id="vehicle_buttons" style="display: none;">
+                <h1>VEHICLE</h1>
+                <div class="btn" onclick="mp.trigger('cefData', 'fix');">REPAIR</div>
+                <div class="btn" onclick="mp.trigger('cefData', 'flip');">FLIP</div>
+                <div class="btn" data-child="#color_window">COLOR</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help -->
+    <div class="draggable_window" id="help_window" data-visible="false" data-movable="true">
+        <div class="window_header">
+            Help
+            <div class="close_window">X</div>
+        </div>
+
+        <div class="window_body">
+            <h1>Binds:</h1>
+            <div class="bind_desc"><div class="key_bind">F1</div> - general freeroam menu.</div>
+            <div class="bind_desc"><div class="key_bind">Z</div> - online players.</div>
+
+            <h1>Commands:</h1>
+            <div class="bind_desc">/veh [veh_name] - creating vehicle.</div>
+            <div class="bind_desc">/skin [skin_name] - change skin.</div>
+            <div class="bind_desc">/fix - repair the vehicle.</div>
+            <div class="bind_desc">/flip - flip the vehicle.</div>
+            <div class="bind_desc">/weapon [weapon_name] - give the weapon for player.</div>
+            <div class="bind_desc">/kill - suicide.</div>
+            <div class="bind_desc">/hp - set 100% health for player.</div>
+            <div class="bind_desc">/armour - set 100% armour for player.</div>
+            <div class="bind_desc">/warp [player_id] - warp to player.</div>
+            <div class="bind_desc">/tp [x] [y] [z] - teleportation player in the coordinates.</div>
+        </div>
+    </div>
+
+    <!-- Skins -->
+    <div class="draggable_window" id="skins_window" data-visible="false" data-movable="true">
+        <div class="window_header">
+            Select skin
+            <div class="close_window">X</div>
+        </div>
+
+        <div class="window_body">
+        </div>
+    </div>
+
+    <!-- Vehicles -->
+    <div class="draggable_window" id="vehicles_window" data-visible="false" data-movable="true">
+        <div class="window_header">
+            Select vehicle
+            <div class="close_window">X</div>
+        </div>
+
+        <div class="window_body">
+        </div>
+    </div>
+
+    <!-- Color picker -->
+    <div class="draggable_window" id="color_window" data-visible="false" data-movable="true">
+        <div class="window_header">
+            Select color
+            <div class="close_window">X</div>
+        </div>
+
+        <div class="window_body">
+            <div class="color_button color_button_active" id="primary">Primary</div>
+            <div class="color_button" id="secondary">Secondary</div>
+            <div class="color_button" id="neon">Neon</div>
+            <div id="picker"></div>
+            <div id="slide"></div>
+        </div>
+    </div>
+
+    <!-- Weapon -->
+    <div class="draggable_window" id="weapon_window" data-visible="false" data-movable="true">
+        <div class="window_header">
+            Select weapon
+            <div class="close_window">X</div>
+        </div>
+
+        <div class="window_body">
+        </div>
+    </div>
+
+    <!-- Online players -->
+    <div id="online_players" style="display: none;">
+        <h1>Online players</h1>
+        <table id="online_players_table">
+            <thead>
+                <tr>
+                    <th class="id">ID</th>
+                    <th class="name">Name</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Magic happens here -->
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>

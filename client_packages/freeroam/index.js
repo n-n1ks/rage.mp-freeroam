@@ -14,7 +14,7 @@ let playersInit  = require('./freeroam/menu_initialization/players.js');
 mp.events.add('guiReady', () => {
     if (!menu) {
         // Creating CEF browser.
-        menu = mp.browsers.new('package://freeroam/index.html');
+        menu = mp.browsers.new('package://freeroam/browser/index.html');
         // Init menus and events, when browser ready.
         mp.events.add('browserDomReady', (browser) => {
             if (browser == menu) {

@@ -6,7 +6,7 @@ This is a graphical interface for freeroam servers. Instead of having to memoriz
 2. Copy `packages` and `client_packages` to `<rage.mp_client>/server-files/` folder.
 3. Start `server.exe`.
 ### IMPORTANT!
-If you are using some client packages - don't override your `index.js` file in your `client_packages` folder. Just add this line into `index.js`:
+If you are using some client packages - don't override your `index.js` file in `client_packages` folder. Just add this line in `index.js` file:
 ```JavaScript
 require('freeroam/index.js');
 ```

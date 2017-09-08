@@ -13,7 +13,8 @@ module.exports = {
         'camelcase': [2, {'properties': 'always'}],
         'keyword-spacing': [2],
         'eol-last': [2],
-        'no-trailing-spaces': [2]
+        'no-trailing-spaces': [2],
+        'no-unused-vars': [1]
     },
     'globals': {
         'mp': true,
@@ -21,4 +22,4 @@ module.exports = {
         'document': true,
         'window': true
     }
-}
+};

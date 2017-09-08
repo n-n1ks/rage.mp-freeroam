@@ -4,14 +4,15 @@ mp.events.addCommand('veh', (player, _, vehName) => {
         pos.x += 2;
         // If player has vehicle - change model.
         if (player.customData.vehicle) {
-                player.customData.vehicle.position = pos;
-                player.customData.vehicle.model = mp.joaat(vehName);
+            player.customData.vehicle.position = pos;
+            player.customData.vehicle.model = mp.joaat(vehName);
 		// Else - create new vehicle.
         } else {
             player.customData.vehicle = mp.vehicles.new(mp.joaat(vehName), pos);
 		}
-    } else
+    } else {
         player.outputChatBox(`<b>Command syntax:</b> /veh [vehicle_name]`);
+    }
 });
 
 mp.events.addCommand('skin', (player, _, skinName) => {
@@ -33,8 +34,9 @@ mp.events.addCommand('flip', (player) => {
         let rotation = player.vehicle.rotation;
         rotation.y = 0;
         player.vehicle.rotation = rotation;
-    } else
+    } else {
         player.outputChatBox(`<b>Error:</b> you are not in the vehicle!`);
+    }
 });
 
 mp.events.addCommand('weapon', (player, _, weaponName) => {
@@ -63,9 +65,9 @@ mp.events.addCommand('warp', (player, _, playerID) => {
             let playerPos = sourcePlayer.position;
             playerPos.x += 1;
             player.position = playerPos;
-        } else
+        } else {
             player.outputChatBox(`<b>Warp:</b> player with such id not found!`);
-                 
+        }
     } else
         player.outputChatBox(`<b>Command syntax:</b> /warp [player_id]`);
 });

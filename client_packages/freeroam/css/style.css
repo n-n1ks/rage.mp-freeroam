@@ -1,152 +1,152 @@
 @import 'reset.css';
 
 @font-face {
-	font-family: ChaletLondon;
-	src: url('../fonts/ChaletLondonNineteenSixty.ttf');
+    font-family: ChaletLondon;
+    src: url('../fonts/ChaletLondonNineteenSixty.ttf');
 }
 
 body {
-	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 
-	font-family: ChaletLondon;
-	font-size: 1vw;
+    font-family: ChaletLondon;
+    font-size: 1vw;
 }
 
 #wrapper {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .left_menu {
-	text-align: center;
-	width: 25vw;
-	height: auto;
-	max-height: 80vh;
+    text-align: center;
+    width: 25vw;
+    height: auto;
+    max-height: 80vh;
 
-	background-color: rgba(0, 0, 0, 0.45);
-	padding: 10px 0 10px 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 10px 0 10px 0;
 
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .left_menu h1 {
-	font-size: 1.5vw;
-	color: #fff;
+    font-size: 1.5vw;
+    color: #fff;
 }
 
 .left_menu #vehicle_buttons {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 .btn {
-	width: 100%;
-	height: 4vh;
-	color: #fff;
-	background-color: rgba(50, 50, 50, 0.85);
+    width: 100%;
+    height: 4vh;
+    color: #fff;
+    background-color: rgba(50, 50, 50, 0.85);
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn:not(:first-child) {
-	margin-top: 1vh;
+    margin-top: 1vh;
 }
 
 .btn:hover {
-	cursor: pointer;
-	background-color: rgba(120, 120, 120, 0.95);
+    cursor: pointer;
+    background-color: rgba(120, 120, 120, 0.95);
 }
 
 /* Draggble window start */
 .draggable_window {
-	position: absolute;
-	float: left;
-	padding: 0px;
-	height: auto;
-	min-width: 25vw;
-	max-width: 90vw;
-	color: #fff;
+    position: absolute;
+    float: left;
+    padding: 0px;
+    height: auto;
+    min-width: 25vw;
+    max-width: 90vw;
+    color: #fff;
 }
 
 .window_header {
-	width: 100%;
-	float: left;
-	background-color: rgba(255, 255, 255, 0.5);
-	text-align: left;
-	padding: 10px;
-	cursor: default;
-	font-size: 1.5vw;
+    width: 100%;
+    float: left;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: left;
+    padding: 10px;
+    cursor: default;
+    font-size: 1.5vw;
 
-	/* Убираем выделение текста в заголовке */
-	-webkit-touch-callout: none;
+    /* Убираем выделение текста в заголовке */
+    -webkit-touch-callout: none;
     -webkit-user-select: none;
      -khtml-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
-            user-select: none;             
+            user-select: none;
 }
 
 .window_header .close_window {
-	cursor: pointer;
-	float: right;
+    cursor: pointer;
+    float: right;
 }
 
 .window_body {
-	width: 100%;
-	height: 100%;
-	padding: 10px;
-	float: left;
-	background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    float: left;
+    background-color: rgba(255, 255, 255, 0.5);
 
-	overflow: auto;
-	max-height: 90vh;
+    overflow: auto;
+    max-height: 90vh;
 }
 
 ::-webkit-scrollbar {
     width: 1vw;
 }
- 
+
 ::-webkit-scrollbar-track {
     background-color: #565656;
 }
- 
+
 ::-webkit-scrollbar-thumb {
-    background-color: #cdcdcd; 
+    background-color: #cdcdcd;
 }
 
 .draggable_window .window_body .item {
-	color: #fff;
-	background-color: rgba(0, 0, 0, 0.85);
-	padding: 1vh;
-	font-size: 1vw;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 1vh;
+    font-size: 1vw;
 }
 
 .draggable_window .window_body .item:hover {
-	background-color: rgba(120, 120, 120, 0.95);
-	cursor: pointer;
+    background-color: rgba(120, 120, 120, 0.95);
+    cursor: pointer;
 }
 
 .draggable_window .window_body .item:not(:first-child) {
-	margin-top: 1vh;
+    margin-top: 1vh;
 }
 
 .collapse_parent {
-	background-color: rgba(50, 50, 50, 0.85) !important;
+    background-color: rgba(50, 50, 50, 0.85) !important;
 }
 
 .collapse_parent:hover {
-	background-color: rgba(120, 120, 120, 0.95) !important;
+    background-color: rgba(120, 120, 120, 0.95) !important;
 }
 
 .collapse_child {
-	padding-top: 1vh;
-	width: 95%;
-	margin: 0 auto;
+    padding-top: 1vh;
+    width: 95%;
+    margin: 0 auto;
 }
 /*Draggble window end */
 
@@ -155,101 +155,100 @@ body {
 #picker { width: 92%; height: 35vh; float: left }
 #slide { margin-left: 5px; width: 6%; height: 35vh; float: left }
 .color_button {
-	width: 31%;
-	height: 3vh;
-	margin: 0 0 1vh 1.5%;
-	float: left;
-	background-color: rgba(50, 50, 50, 0.85);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    width: 31%;
+    height: 3vh;
+    margin: 0 0 1vh 1.5%;
+    float: left;
+    background-color: rgba(50, 50, 50, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .color_button:hover {
-	background-color: rgba(120, 120, 120, 0.95);
-	cursor: pointer;
+    background-color: rgba(120, 120, 120, 0.95);
+    cursor: pointer;
 }
 
 .color_button_active {
-	background-color: rgba(120, 120, 120, 0.95) !important;
+    background-color: rgba(120, 120, 120, 0.95) !important;
 }
 /* Colorpicker end */
 
 .bind_desc {
-	margin: 1vh 0 1vh 0;
-	display: flex;
-	align-items: center;
+    margin: 1vh 0 1vh 0;
+    display: flex;
+    align-items: center;
 }
 
 #help_window .window_header {
-	background-color: rgba(0, 0, 0, 0.75) !important;
+    background-color: rgba(0, 0, 0, 0.75) !important;
 }
 
 #help_window .window_body {
-	background-color: rgba(0, 0, 0, 0.75) !important;
+    background-color: rgba(0, 0, 0, 0.75) !important;
 }
 
 #help_window h1 {
-	margin: 1vh 0vh 1vh 0vh;
-	font-size: 1.5vw;
+    margin: 1vh 0vh 1vh 0vh;
+    font-size: 1.5vw;
 }
 
 .key_bind {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 2vh;
-	height: 2vh;
-	background-color: #ffffff;
-	color: #000;
-	border-radius: 4px;
-	float: left;
-	padding: 4px;
-	margin-right: 0.5vw;
-	font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2vh;
+    height: 2vh;
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 4px;
+    float: left;
+    padding: 4px;
+    margin-right: 0.5vw;
+    font-weight: 600;
 }
 
 #online_players {
-  	position: absolute;
-	overflow-y: auto;
-	overflow-x: hidden;
-	z-index: 9999;
-	
-	width: 30vw;
-	height: auto;
-	max-height: 90vh;
-	background-color: rgba(0, 0, 0, 0.6);
-	color: #fff;
+      position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 9999;
+
+    width: 30vw;
+    height: auto;
+    max-height: 90vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
 }
 
 #online_players h1 {
-	margin: 1vh 0 1vh 0.5vw;
-	font-size: 1.5vw;
+    margin: 1vh 0 1vh 0.5vw;
+    font-size: 1.5vw;
 }
 
 #online_players_table {
-	width: 100%;
-	margin: 10px;
-	border-collapse: separate;
+    width: 100%;
+    margin: 10px;
+    border-collapse: separate;
     border-spacing: 0 5px;
 }
 
 
 #online_players_table thead tr {
-	text-align: center;
-	font-weight: 600;
+    text-align: center;
+    font-weight: 600;
 }
 
 
 #online_players_table .id {
-	width: 10%;
+    width: 10%;
 }
 
 online_players_table .name {
-	width: 90%;
+    width: 90%;
 }
 
 #online_players_table tbody tr {
-	text-align: center;
-	
+    text-align: center;
 }

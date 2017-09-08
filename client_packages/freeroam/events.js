@@ -1,39 +1,33 @@
 exports = function(menu) {
     // Add player in the table.
     mp.events.add('playerJoinedServer', (id, name) => {
-        if (menu)
-            menu.execute(`addPlayerInTheTable('${id}', '${name}');`);
+        menu.execute(`addPlayerInTheTable('${id}', '${name}');`);
     });
 
     // Remove player from the table.
     mp.events.add('playerLeavedServer', (id, name) => {
-        if (menu)
-            menu.execute(`removePlayerInTheTable('${id}');`);
+        menu.execute(`removePlayerInTheTable('${id}');`);
     });
 
     // Hide vehicle buttons, when player exits vehicle (triggered from server, will be fixed on the client-side).
     function hideVehicleButtons(player, vehicle, seat) {
-        if (menu)
-            menu.execute('$("#vehicle_buttons").fadeOut(250);');
+        menu.execute('$("#vehicle_buttons").fadeOut(250);');
     }
     mp.events.add('playerExitVehicle', hideVehicleButtons);
     mp.events.add('hideVehicleButtons', hideVehicleButtons);
 
     // Show vehicle buttons, when player enters vehicle (triggered from server, will be fixed on the client-side).
     mp.events.add('playerEnteredVehicle', (player, vehicle, seat) => {
-        if (menu)
-            menu.execute('$("#vehicle_buttons").fadeIn(250);');
+        menu.execute('$("#vehicle_buttons").fadeIn(250);');
     });
-    
+
     // Change chat activity.
     mp.events.add('chatInputActive', () => {
-        if (menu)
-            menu.execute(`setChatActive(true);`);
+        menu.execute(`setChatActive(true);`);
     });
 
     mp.events.add('chatInputInactive', () => {
-        if (menu)
-            menu.execute(`setChatActive(false);`);
+        menu.execute(`setChatActive(false);`);
     });
 
     // Getting data from CEF.
@@ -48,12 +42,12 @@ exports = function(menu) {
                 // Primary color.
                 case 'primary':
                     mp.players.local.vehicle.setCustomPrimaryColour(color.r, color.g, color.b);
-                    
+
                     break;
                 // Secondary color.
                 case 'secondary':
                     mp.players.local.vehicle.setCustomSecondaryColour(color.r, color.g, color.b);
-                    
+
                     break;
                 // Neon.
                 case 'neon':
@@ -63,10 +57,10 @@ exports = function(menu) {
                             mp.players.local.vehicle.setNeonLightEnabled(i, true);
                         }
                     }
-                    
+
                     // Set neon color.
                     mp.players.local.vehicle.setNeonLightsColour(color.r, color.g, color.b);
-                    
+
                     break;
             }
         }

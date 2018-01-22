@@ -17,7 +17,7 @@ mp.events.add('playerJoin', (player) => {
 
     mp.players.forEach(_player => {
         if (_player != player)
-            _player.call('playerJoinedServer', player.id, player.name);
+            _player.call('playerJoinedServer', [player.id, player.name]);
     });
 
     player.spawn(spawnPoints[Math.floor(Math.random() * spawnPoints.length)]);
@@ -33,7 +33,7 @@ mp.events.add('playerQuit', (player) => {
 
     mp.players.forEach(_player => {
         if (_player != player)
-            _player.call('playerLeavedServer', player.id, player.name);
+            _player.call('playerLeavedServer', [player.id, player.name]);
     });
 });
 

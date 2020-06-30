@@ -10,6 +10,6 @@ If you are using some client packages - don't override your `index.js` file in `
 ```JavaScript
 require('freeroam/index.js');
 ```
-Otherwise another client pacakges wont work!
+Otherwise another client packages wont work!
 ## License
 Freeroam is released under the [MIT License](https://opensource.org/licenses/MIT).

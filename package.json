@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/n-n1ks/rage.mp-freeroam#readme",
   "dependencies": {
-    "eslint": "^4.6.1"
+    "eslint": "^4.18.2"
   }
 }
